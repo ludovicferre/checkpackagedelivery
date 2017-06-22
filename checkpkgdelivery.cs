@@ -5,7 +5,7 @@ namespace Symantec.CWoC {
     class CheckPkgDelivery {
 		public static void Main(string [] args) {
 		
-			string command = "del /s /f";
+			string command = "del /q /s /f";
 			string postfix = "";
 			// Need to run on the Altiris Agent folder
 			if(args.Length == 1) {
@@ -28,7 +28,7 @@ namespace Symantec.CWoC {
 						goto okay;
 					}
 				}
-				Console.WriteLine("{0} {1} {2}", command, delivery_path, postfix);
+				Console.WriteLine("{0} \"{1}\" {2}", command, delivery_path, postfix);
 				okay:
 					continue;
 			}
